@@ -57,13 +57,17 @@ public final class ToDoViewModel: ObservableObject {
         return true
     }
     
-    public func addTodo(_ input: String) {
+    public func addTodo(withTitle input: String, note: String, date: Date) {
         guard validateInput(input) else {
             return
         }
         let todo = ToDoEntity(context: storeContainer.viewContext)
+        todo.id = UUID().uuidString
         todo.title = input
-        todo.date = Date()
+        todo.note = note
+        todo.date = date
+        todo.isCompleted = false
+        todo.isArchived = false
         saveTodo()
     }
     
