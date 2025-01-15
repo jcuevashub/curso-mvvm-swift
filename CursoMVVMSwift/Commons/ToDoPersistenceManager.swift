@@ -13,7 +13,7 @@ final class ToDoPersistenceManager {
     let container: NSPersistentContainer
     
     private init() {
-        container = NSPersistentContainer(name: "ToDo")
+        container = NSPersistentContainer(name: "ModelData")
         container.loadPersistentStores { storeDescription, error in
             if let error = error {
                 fatalError("Failed to load persistent stores: \(error)")

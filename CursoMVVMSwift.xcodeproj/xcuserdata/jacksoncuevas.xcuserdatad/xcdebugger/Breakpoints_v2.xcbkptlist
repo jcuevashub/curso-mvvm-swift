@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8BEB7E5D-41DF-4F00-A5FF-7D73DB0AF357"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE98BB86-A58A-4A59-B491-5D5982DD9019"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CursoMVVMSwift/Views/ToDoAdd/ToDoAddView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ToDoAddView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "CE98BB86-A58A-4A59-B491-5D5982DD9019 - b27a415ad7ecb6ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CursoMVVMSwift.ToDoAddView.viewModel.getter : CursoMVVMSwift.ToDoViewModel"
+                  moduleName = "CursoMVVMSwift.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacksoncuevas/Desktop/curso-mvvm-swift/CursoMVVMSwift/Views/ToDoAdd/ToDoAddView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "CE98BB86-A58A-4A59-B491-5D5982DD9019 - 7366c3446f4bc782"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CursoMVVMSwift.ToDoAddView.$viewModel.getter : SwiftUI.EnvironmentObject&lt;CursoMVVMSwift.ToDoViewModel&gt;.Wrapper"
+                  moduleName = "CursoMVVMSwift.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacksoncuevas/Desktop/curso-mvvm-swift/CursoMVVMSwift/Views/ToDoAdd/ToDoAddView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "CE98BB86-A58A-4A59-B491-5D5982DD9019 - c6baabdeac9cc1b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of CursoMVVMSwift.ToDoAddView.init(viewModel: SwiftUI.EnvironmentObject&lt;CursoMVVMSwift.ToDoViewModel&gt;, isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, title: Swift.String, note: Swift.String, date: Foundation.Date, todo: Swift.Optional&lt;CursoMVVMSwift.ToDoEntity&gt;) -&gt; CursoMVVMSwift.ToDoAddView"
+                  moduleName = "CursoMVVMSwift.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacksoncuevas/Desktop/curso-mvvm-swift/CursoMVVMSwift/Views/ToDoAdd/ToDoAddView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72B6729B-BF6B-44C4-9309-EC6140FA1885"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CursoMVVMSwift/ViewModels/ToDoViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "addTodo(withTitle:note:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

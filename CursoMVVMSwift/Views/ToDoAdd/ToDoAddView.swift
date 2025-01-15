@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToDoAddView: View {
-    //@Environment var viewModel: ToDoViewModel
+    @EnvironmentObject var viewModel: ToDoViewModel
     @Binding var isPresented: Bool
     
     @State var title: String = ""
@@ -29,12 +29,17 @@ struct ToDoAddView: View {
         return startDate...endDate
     }()
     
+    var isSavedDisabled: Bool {
+        !viewModel.validateInput(title)
+    }
+    
     var body: some View {
         VStack(spacing: 16) {
             ToDoTextInput(
                 "Ingrese nombre de la tarea",
                 text: $title,
                 label: "Tarea")
+            
             ToDoTextInput(
                 "Ingrese nota",
                 text: $note,
@@ -53,19 +58,32 @@ struct ToDoAddView: View {
             Spacer()
             
             Button {
-                
+                if todo != nil {
+                  
+                } else {
+                    viewModel.addTodo(
+                        withTitle: title,
+                        note: note,
+                        date: date)
+                }
+                isPresented.toggle()
             } label: {
                 Text("Guardar".uppercased())
                     .font(.headline)
                     .tint(Color.primary)
                     .padding()
                     .frame(maxWidth: .infinity)
+                    .background(isSavedDisabled ? Color(UIColor.systemGray5) : Color.teal)
                     .clipShape(.rect(cornerRadius: 10))
-            }
+            }.disabled(isSavedDisabled)
+            
+        }.onAppear {
+            
         }
     }
 }
 
 #Preview {
     ToDoAddView(isPresented: .constant(true))
+        .environmentObject(ToDoViewModel())
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ToDoList: View {
+    @State private var isPresented: Bool = false
+    
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 8),
         GridItem(.flexible(), spacing: 8),
@@ -20,7 +22,11 @@ struct ToDoList: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay {
-                
+                if isPresented {
+                    ToDoSheet(isShow: $isPresented) {
+                        ToDoAddView(isPresented: $isPresented)
+                    }.ignoresSafeArea(.keyboard)
+                }
             }
         }
         .navigationTitle("ToDos")
@@ -35,7 +41,7 @@ struct ToDoList: View {
                             .foregroundStyle(Color.primary)
                     }
                     Button {
-                        
+                        isPresented.toggle()
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 20, weight: .semibold))
@@ -49,6 +55,6 @@ struct ToDoList: View {
 
 #Preview {
     NavigationView {
-        ToDoList()
+        ToDoList().environmentObject(ToDoViewModel())
     }
 }

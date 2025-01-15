@@ -10,8 +10,11 @@ import CoreData
 import Combine
 
 public final class ToDoViewModel: ObservableObject {
+    
     @Published private(set) var todos: [ToDoEntity] = []
+    
     var cancellables: Set<AnyCancellable> = []
+    
     private var storeContainer: NSPersistentContainer {
         return ToDoPersistenceManager.shared.container
     }
@@ -50,7 +53,7 @@ public final class ToDoViewModel: ObservableObject {
         return index
     }
     
-    private func validateInput(_ input: String) -> Bool {
+    public func validateInput(_ input: String) -> Bool {
         guard input.trimmingCharacters(in: .whitespaces).count > 2 else {
             return false
         }

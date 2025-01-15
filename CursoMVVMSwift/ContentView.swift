@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            Text("Hola")
+            ToDoList()
         }
         .tint(Color.primary)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(ToDoViewModel())
 }
