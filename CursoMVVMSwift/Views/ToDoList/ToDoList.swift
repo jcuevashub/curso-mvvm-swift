@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct ToDoList: View {
+    @EnvironmentObject var viewModel: ToDoViewModel
     @State private var isPresented: Bool = false
+    @State private var todoToPreview: ToDoEntity?
+    
+    private var unArchaivedToDos: [ToDoEntity] {
+        viewModel.todos.filter{!$0.isArchived}
+    }
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 8),
@@ -18,7 +24,18 @@ struct ToDoList: View {
     var body: some View {
         ZStack(alignment: .center) {
             ScrollView {
-                
+                if !unArchaivedToDos.isEmpty {
+                    LazyVGrid(columns: columns) {
+                        ForEach(unArchaivedToDos) {todo in
+                            ToDoItemView(todo: todo)
+                                .onTapGesture {
+                                    todoToPreview = todo
+                                }
+                        }
+                    }.padding(.horizontal)
+                } else {
+                    
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay {
@@ -26,6 +43,9 @@ struct ToDoList: View {
                     ToDoSheet(isShow: $isPresented) {
                         ToDoAddView(isPresented: $isPresented)
                     }.ignoresSafeArea(.keyboard)
+                } else if todoToPreview != nil {
+                    ToDoPreviewView(todo: $todoToPreview)
+                        .transition(AnyTransition.opacity.animation(.easeIn))
                 }
             }
         }
@@ -50,6 +70,7 @@ struct ToDoList: View {
                 }
             }
         }
+        .navigationBarHidden(isPresented || (todoToPreview != nil))
     }
 }
 
