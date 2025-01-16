@@ -68,7 +68,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "72B6729B-BF6B-44C4-9309-EC6140FA1885"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CursoMVVMSwift/ViewModels/ToDoViewModel.swift"

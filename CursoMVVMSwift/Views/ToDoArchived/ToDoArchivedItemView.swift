@@ -24,7 +24,7 @@ struct ToDoArchivedItemView: View {
                 Spacer()
                 HStack(spacing: 8) {
                     Button {
-                        
+                        viewModel.deleteTodo(todo)
                     } label: {
                         Image(systemName: "trash")
                             .font(.system(size: 20, weight: .semibold))
