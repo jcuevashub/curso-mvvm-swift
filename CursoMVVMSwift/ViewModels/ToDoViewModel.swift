@@ -74,16 +74,19 @@ public final class ToDoViewModel: ObservableObject {
         saveTodo()
     }
     
-    public func updateTodo(_ todo: ToDoEntity, _ input: String) {
-        guard validateInput(input) else {
+    public func updateTodo(_ todo: ToDoEntity, withNewTitle title: String, note: String, date: Date) {
+        guard let index = getToDoIndex(todo) else {
             return
         }
-        todo.title = input
+        
+        todos[index].title = title
+        todos[index].note = note
+        todos[index].date = date
         saveTodo()
     }
     
     public func archiveTodo(_ todo: ToDoEntity) {
-
+        
     }
     
     
@@ -92,7 +95,7 @@ public final class ToDoViewModel: ObservableObject {
     }
     
     public func deleteTodo(_ todo: ToDoEntity) {
-
+        
     }
     
 }

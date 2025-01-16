@@ -18,7 +18,7 @@ struct ToDoAddView: View {
     public var todo: ToDoEntity? = nil
     
     private let dateRange: ClosedRange<Date> = {
-      let calendar = Calendar.current
+        let calendar = Calendar.current
         let startDate = Date.now
         let endDate = calendar.date(
             byAdding: .year,
@@ -58,8 +58,8 @@ struct ToDoAddView: View {
             Spacer()
             
             Button {
-                if todo != nil {
-                  
+                if let todo = todo {
+                    viewModel.updateTodo(todo, withNewTitle: title, note: note, date: date)
                 } else {
                     viewModel.addTodo(
                         withTitle: title,
@@ -78,7 +78,11 @@ struct ToDoAddView: View {
             }.disabled(isSavedDisabled)
             
         }.onAppear {
-            
+            if let todo = todo {
+                title = todo.title!
+                note = todo.note ?? ""
+                date = todo.date!
+            }
         }
     }
 }

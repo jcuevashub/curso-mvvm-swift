@@ -18,8 +18,8 @@ struct ToDoPreviewView: View {
             ZStack(alignment: .bottom) {
                 Rectangle().fill(.thinMaterial)
                     .ignoresSafeArea()
-                    .onTapGesture {pGesture in
-                        
+                    .onTapGesture {
+                        todo = nil
                     }
                 
                 VStack(spacing: 36) {
@@ -46,7 +46,7 @@ struct ToDoPreviewView: View {
                     
                     HStack(spacing: 16) {
                         Button {
-                            
+                            showedTodoCreationSheet = true
                         } label: {
                             Text("Editar")
                                 .frame(maxWidth: .infinity)
@@ -89,7 +89,14 @@ struct ToDoPreviewView: View {
             .frame(maxHeight: UIScreen.main.bounds.height)
             .zIndex(2)
             .overlay {
-                
+                if showedTodoCreationSheet {
+                    ToDoSheet(isShow: $showedTodoCreationSheet) {
+                        ToDoAddView(
+                            isPresented: $showedTodoCreationSheet,
+                            todo: todo
+                        )
+                    }.ignoresSafeArea(.keyboard)
+                }
             }
             
         } else {

@@ -41,7 +41,7 @@ struct ToDoItemView: View {
                 Spacer(minLength: 2)
                 HStack(spacing: 4) {
                     Text("Hora:")
-                    Text(Date(), format: .dateTime.hour().minute())
+                    Text(todo.date!, format: .dateTime.hour().minute())
                         .fontWeight(.thin)
                 }
             }
