@@ -25,6 +25,7 @@ struct ToDoItemView: View {
                             .fontWeight(.semibold)
                     }.padding(.top, -8)
                     Spacer(minLength: 2)
+                    ToDoStatusView(todo: todo)
                 }
                 VStack(alignment: .leading) {
                     Text(todo.title!)

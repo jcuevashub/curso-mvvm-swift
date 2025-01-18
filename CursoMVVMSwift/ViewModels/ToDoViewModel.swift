@@ -104,7 +104,13 @@ public final class ToDoViewModel: ObservableObject {
     }
     
     public func updateTodoStatus(_ todo: ToDoEntity) {
+        guard let index = getToDoIndex(todo) else {
+            return
+        }
         
+        todos[index].isCompleted.toggle()
+        
+        saveTodo()
     }
     
     public func deleteTodo(_ todo: ToDoEntity) {

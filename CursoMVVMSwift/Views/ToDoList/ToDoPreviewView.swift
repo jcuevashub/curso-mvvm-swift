@@ -33,11 +33,12 @@ struct ToDoPreviewView: View {
                                 .hour()
                                 .minute())
                             
-                            Text("")
+                            Text(safeTodo.title!)
                                 .font(.title3)
                                 .fontWeight(.bold)
                         }
                         Spacer()
+                        ToDoStatusView(todo: safeTodo)
                     }
                     if let note = safeTodo.note, !note.isEmpty {
                         Text(note)

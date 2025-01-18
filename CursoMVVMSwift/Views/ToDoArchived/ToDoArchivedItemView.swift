@@ -15,10 +15,19 @@ struct ToDoArchivedItemView: View {
         if todo.id != nil {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(todo.title!)
-                        .font(.headline)
-                        .lineLimit(1)
-                        .padding(.top, 4)
+                    VStack(alignment: .leading) {
+                        HStack(alignment: .center) {
+                            ToDoStatusView(
+                                todo: todo,
+                                disabled: true
+                            )
+                            Text(todo.title!)
+                                .font(.headline)
+                                .lineLimit(1)
+                                .padding(.top, 4)
+                        }
+                        Text(todo.date!, format: .dateTime.day().month().year())
+                    }
                 }
                 Text(todo.date!, format: .dateTime.day().month().year())
                 Spacer()
