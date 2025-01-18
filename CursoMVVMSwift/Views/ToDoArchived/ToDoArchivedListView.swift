@@ -23,7 +23,8 @@ struct ToDoArchivedListView: View {
                     }.padding(.horizontal)
                 }
             } else {
-                
+                ToDoNoArchivedView()
+                    .offset(y: UIScreen.main.bounds.height * 0.35)
             }
         }
         .padding(.top, 25)
@@ -34,4 +35,5 @@ struct ToDoArchivedListView: View {
 
 #Preview {
     ToDoArchivedListView()
+        .environmentObject(ToDoViewModel())
 }
